@@ -1,15 +1,15 @@
 package com.example.music_app_spotify;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.view.View;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -18,83 +18,32 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        View rootView = findViewById(android.R.id.content);
+        // 创建歌曲列表数据
+        ArrayList<Song> songList = new ArrayList<>();
+        songList.add(new Song("Song 1", "Artist 1", R.drawable.frame));
+        songList.add(new Song("Song 2", "Artist 2", R.drawable.frame));
+        // 添加更多歌曲...
 
-        rootView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                hideSearchComponentsIfVisible();
-            }
-        });
 
-        ImageButton searchButton = findViewById(R.id.searchButton);
-        searchButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // 在这里处理按钮点击事件，可以添加播放音乐的逻辑
-//                playMusic();
-            }
-        });
+        List<Map<String, Object>> songDataList = new ArrayList<>();
 
-    }
-
-    public void onRectangleClick(View view) {
-        EditText searchEditText = findViewById(R.id.searchEditText);
-        ImageButton searchButton = findViewById(R.id.searchButton);
-        View rectangle_2 = findViewById(R.id.rectangle_2);
-        RelativeLayout frame = findViewById(R.id.frame);
-        TextView search = findViewById(R.id.search);
-
-        // 如果输入框不可见，点击搜索按钮后显示输入框和搜索按钮
-        if (searchEditText.getVisibility() == View.INVISIBLE) {
-            searchEditText.setVisibility(View.VISIBLE);
-            searchButton.setVisibility(View.VISIBLE);
-            rectangle_2.setVisibility(View.INVISIBLE);
-            frame.setVisibility(View.INVISIBLE);
-            search.setVisibility(View.INVISIBLE);
-
-            // 显示输入法键盘
-            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-            if (imm != null) {
-                imm.showSoftInput(searchEditText, InputMethodManager.SHOW_IMPLICIT);
-            }
-        } else {
-            // 如果输入框可见，隐藏输入框和搜索按钮
-            searchEditText.setVisibility(View.INVISIBLE);
-            searchButton.setVisibility(View.INVISIBLE);
-            rectangle_2.setVisibility(View.VISIBLE);
-            frame.setVisibility(View.VISIBLE);
-            search.setVisibility(View.VISIBLE);
-
-            // 隐藏输入法键盘
-            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-            if (imm != null) {
-                imm.hideSoftInputFromWindow(searchEditText.getWindowToken(), 0);
-            }
+        for (Song song : songList) {
+            Map<String, Object> songData = new HashMap<>();
+            songData.put("songName", song.getSongName());
+            songData.put("artistName", song.getArtistName());
+            songData.put("imageResourceId", song.getImageResourceId());
+            songDataList.add(songData);
         }
-    }
+
+        String[] from = {"songName", "artistName", "imageResourceId"};
+        int[] to = {R.id.textViewSongName, R.id.textViewArtistName, R.id.imageViewSong};
+
+        SimpleAdapter songAdapter = new SimpleAdapter(this, songDataList, R.layout.song_item_layout, from, to);
+
+        ListView listView = findViewById(R.id.recyclerViewSongs);
+        listView.setAdapter(songAdapter);
 
 
-    private void hideSearchComponentsIfVisible() {
-        EditText searchEditText = findViewById(R.id.searchEditText);
-        ImageButton searchButton = findViewById(R.id.searchButton);
-        View rectangle_2 = findViewById(R.id.rectangle_2);
-        RelativeLayout frame = findViewById(R.id.frame);
-        TextView search = findViewById(R.id.search);
-
-        if (searchEditText.getVisibility() == View.VISIBLE) {
-            // 如果输入框可见，隐藏输入框和搜索按钮
-            searchEditText.setVisibility(View.INVISIBLE);
-            searchButton.setVisibility(View.INVISIBLE);
-            rectangle_2.setVisibility(View.VISIBLE);
-            frame.setVisibility(View.VISIBLE);
-            search.setVisibility(View.VISIBLE);
-            // 隐藏输入法键盘
-            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-            if (imm != null) {
-                imm.hideSoftInputFromWindow(searchEditText.getWindowToken(), 0);
-            }
-        }
     }
 
 

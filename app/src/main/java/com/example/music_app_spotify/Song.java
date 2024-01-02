@@ -2,19 +2,26 @@ package com.example.music_app_spotify;
 
 // Song.java
 public class Song {
-    private String name;
-    private String artist;
+    private String songName;
+    private String artistName;
+    private int imageResourceId;
 
-    public Song(String name, String artist) {
-        this.name = name;
-        this.artist = artist;
+    public Song(String songName, String artistName, int imageResourceId) {
+        this.songName = songName;
+        this.artistName = artistName;
+        this.imageResourceId = imageResourceId;
     }
 
-    public String getName() {
-        return name;
+    public String getSongName() {
+        return songName;
     }
 
-    public String getArtist() {
-        return artist;
+    public String getArtistName() {
+        return artistName;
+    }
+
+    public int getImageResourceId() {
+        return imageResourceId;
     }
 }
+
