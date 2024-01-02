@@ -42,7 +42,7 @@ dependencies {
     implementation("androidx.appcompat:appcompat")
     implementation("com.google.android.material:material:1.8.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation(files("C:\\Users\\yly\\Downloads\\spotify-app-remote-release-0.8.0.aar"))
+    implementation(files("D:\\Android\\AndroidStudioProjects\\Music_app_spotify\\app\\libs\\spotify-app-remote-release-0.8.0.aar"))
     implementation ("com.google.code.gson:gson:2.10.1")
     implementation("com.google.android.gms:play-services-auth:20.7.0")
     testImplementation("junit:junit:4.13.2")

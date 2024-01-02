@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // Get the Intent that started this activity and extract the string
-//        Intent intent = getIntent();
+        Intent intent = getIntent();
 //        String message = intent.getStringExtra("if_login_in");
 //        if(message.equals("ok"))return;
         // Check if the user is already logged in, based on your app's logic
@@ -40,13 +40,24 @@ public class MainActivity extends AppCompatActivity {
 
         // 找到播放按钮
         Button playButton = findViewById(R.id.playButton);
-
+        Button stopButton = findViewById(R.id.stopButton);
         // 设置按钮的点击事件
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // 在这里处理按钮点击事件，可以添加播放音乐的逻辑
                 playMusic();
+            }
+        });
+
+        stopButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 在这里处理按钮点击事件，停止音乐播放
+                if (mSpotifyAppRemote != null && mSpotifyAppRemote.isConnected()) {
+                    // 如果 SpotifyAppRemote 已连接，则停止音乐播放
+                    mSpotifyAppRemote.getPlayerApi().pause();
+                }
             }
         });
     }
