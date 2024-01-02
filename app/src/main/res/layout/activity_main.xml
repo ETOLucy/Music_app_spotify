@@ -16,7 +16,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:background="@drawable/rectangle_2"
-            android:onClick="onSearchButtonClick"/>
+            android:onClick="onRectangleClick"/>
 
         <RelativeLayout
             android:id="@+id/frame"
@@ -67,9 +67,10 @@
             android:layout_marginTop="-2dp"
             android:layout_marginRight="41dp"
             android:background="@android:color/transparent"
-            android:onClick="onSearchButtonClick"
+
             android:src="@drawable/frame"
-            android:visibility="invisible" />
+            android:visibility="invisible"
+            android:onClick="onSearchButtonClick" />
 
     </RelativeLayout>
 

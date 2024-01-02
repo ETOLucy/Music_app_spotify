@@ -27,9 +27,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        ImageButton searchButton = findViewById(R.id.searchButton);
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 在这里处理按钮点击事件，可以添加播放音乐的逻辑
+//                playMusic();
+            }
+        });
+
     }
 
-    public void onSearchButtonClick(View view) {
+    public void onRectangleClick(View view) {
         EditText searchEditText = findViewById(R.id.searchEditText);
         ImageButton searchButton = findViewById(R.id.searchButton);
         View rectangle_2 = findViewById(R.id.rectangle_2);
