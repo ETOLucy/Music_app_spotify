@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <!-- <permission -->
     <!-- android:name="android.permission.INTERACT_ACROSS_USERS" -->
     <!-- android:protectionLevel="signature" -->
@@ -21,19 +22,29 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Music_app_spotify"
         tools:targetApi="31">
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@drawable/rectangle_2" />
+
+        <activity
+            android:name=".MainActivity_backup"
+            android:exported="false" />
         <activity
             android:name=".RedirectActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="http" android:host="localhost" android:port="1111" android:path="/callback" />
+
+                <data
+                    android:host="localhost"
+                    android:path="/callback"
+                    android:port="1111"
+                    android:scheme="http" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity2"
-            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

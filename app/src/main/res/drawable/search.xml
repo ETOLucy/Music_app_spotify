@@ -1,0 +1,20 @@
+
+<!-- drawable/search.xml -->
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="344dp"
+    android:height="27dp"
+    android:viewportWidth="344"
+    android:viewportHeight="27"
+    >
+    <group>
+        <clip-path
+            android:pathData="M13.5 0H330.5C337.956 0 344 6.04416 344 13.5C344 20.9558 337.956 27 330.5 27H13.5C6.04416 27 0 20.9558 0 13.5C0 6.04416 6.04416 0 13.5 0Z"
+            />
+        <path
+            android:pathData="M0 0V27H344V0"
+            android:fillColor="#F4F4F4"
+            />
+    </group>
+</vector>
