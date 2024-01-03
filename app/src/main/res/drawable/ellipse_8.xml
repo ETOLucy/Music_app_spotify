@@ -1,0 +1,47 @@
+<!-- drawable/ellipse_8.xml -->
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="806dp"
+    android:height="806dp"
+    android:viewportWidth="806"
+    android:viewportHeight="806"
+    >
+    <group>
+        <clip-path
+            android:pathData="M806 403C806 625.571 625.571 806 403 806C180.429 806 0 625.571 0 403C0 180.429 180.429 0 403 0C625.571 0 806 180.429 806 403Z"
+            />
+        <group
+            android:translateX="1"
+            android:translateY="0"
+            android:pivotX="403"
+            android:pivotY="403"
+            android:scaleX="2"
+            android:scaleY="2"
+            android:rotation="90"
+            >
+            <path
+                android:pathData="M0 0V806H806V0"
+                >
+                <aapt:attr name="android:fillColor">
+                    <gradient
+                        android:type="linear"
+                        android:startX="201.5"
+                        android:startY="403"
+                        android:endX="604.5"
+                        android:endY="403"
+                        >
+                        <item
+                            android:color="#FF9E9E"
+                            android:offset="0"
+                            />
+                        <item
+                            android:color="#FFCFCF"
+                            android:offset="1"
+                            />
+                    </gradient>
+                </aapt:attr>
+            </path>
+        </group>
+    </group>
+</vector>

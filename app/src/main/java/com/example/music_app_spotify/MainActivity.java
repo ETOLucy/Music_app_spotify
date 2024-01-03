@@ -1,6 +1,9 @@
 package com.example.music_app_spotify;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -20,8 +23,19 @@ public class MainActivity extends AppCompatActivity {
 
         // 创建歌曲列表数据
         ArrayList<Song> songList = new ArrayList<>();
-        songList.add(new Song("Song 1", "Artist 1", R.drawable.frame));
-        songList.add(new Song("Song 2", "Artist 2", R.drawable.frame));
+        songList.add(new Song("Song 1", "Artist 1", R.drawable.ellipse_9));
+        songList.add(new Song("Song 2", "Artist 2", R.drawable.ellipse_9));
+        songList.add(new Song("Song 1", "Artist 1", R.drawable.ellipse_9));
+        songList.add(new Song("Song 2", "Artist 2", R.drawable.ellipse_9));
+        songList.add(new Song("Song 1", "Artist 1", R.drawable.ellipse_9));
+        songList.add(new Song("Song 2", "Artist 2", R.drawable.ellipse_9));
+        songList.add(new Song("Song 1", "Artist 1", R.drawable.ellipse_9));
+        songList.add(new Song("Song 2", "Artist 2", R.drawable.ellipse_9));
+        songList.add(new Song("Song 1", "Artist 1", R.drawable.ellipse_9));
+        songList.add(new Song("Song 2", "Artist 2", R.drawable.ellipse_9));
+        songList.add(new Song("Song 1", "Artist 1", R.drawable.ellipse_9));
+        songList.add(new Song("Song 2", "Artist 2", R.drawable.ellipse_9));
+
         // 添加更多歌曲...
 
 
@@ -43,7 +57,16 @@ public class MainActivity extends AppCompatActivity {
         ListView listView = findViewById(R.id.recyclerViewSongs);
         listView.setAdapter(songAdapter);
 
+        // Set item click listener for ListView
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                // Handle item click, e.g., start new activity
+                Intent intent = new Intent(MainActivity.this, Song_play.class);
+                startActivity(intent);
+            }
 
+        });
     }
 
 

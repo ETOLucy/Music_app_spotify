@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools" >
 
     <!-- <permission -->
     <!-- android:name="android.permission.INTERACT_ACROSS_USERS" -->
@@ -21,17 +21,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Music_app_spotify"
-        tools:targetApi="31">
+        tools:targetApi="31" >
         <meta-data
             android:name="com.google.android.actions"
-            android:resource="@drawable/rectangle_2" />
+            android:resource="@drawable/some_id" />
 
+        <activity
+            android:name=".Song_play"
+            android:exported="false" />
         <activity
             android:name=".MainActivity_backup"
             android:exported="false" />
         <activity
             android:name=".RedirectActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -47,7 +50,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
