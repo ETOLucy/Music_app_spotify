@@ -36,6 +36,8 @@ android {
 dependencies {
 //    implementation ("com.spotify.android.appremote:app-remote-lib:0.7.0")
 //    implementation ("com.spotify.android.appremote:spotify-player-24h:0.7.0")
+    //GIF
+    implementation ("pl.droidsonroids.gif:android-gif-drawable:1.2.15")
 
     implementation("com.spotify.android:auth:1.2.6")
     implementation ("androidx.browser:browser:1.6.0")

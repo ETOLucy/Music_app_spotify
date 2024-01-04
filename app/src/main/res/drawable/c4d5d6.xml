@@ -1,0 +1,19 @@
+<!-- drawable/c4d5d6.xml -->
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="130dp"
+    android:height="259dp"
+    android:viewportWidth="130"
+    android:viewportHeight="259"
+    >
+    <group>
+        <clip-path
+            android:pathData="M65 0C100.899 0 130 29.1015 130 65V194C130 229.899 100.899 259 65 259C29.1015 259 0 229.899 0 194V65C0 29.1015 29.1015 0 65 0Z"
+            />
+        <path
+            android:pathData="M0 0V259H130V0"
+            android:fillColor="#E8EDED"
+            />
+    </group>
+</vector>

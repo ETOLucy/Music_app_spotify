@@ -6,10 +6,14 @@ public class Song {
     private String artistName;
     private int imageResourceId;
 
-    public Song(String songName, String artistName, int imageResourceId) {
+    private String songTrack;
+
+    public Song(String songName, String artistName, int imageResourceId, String songTrack) {
         this.songName = songName;
         this.artistName = artistName;
         this.imageResourceId = imageResourceId;
+        this.songTrack = songTrack;
+
     }
 
     public String getSongName() {
@@ -23,5 +27,7 @@ public class Song {
     public int getImageResourceId() {
         return imageResourceId;
     }
+
+    public String getSongTrack() { return songTrack; }
 }
 
